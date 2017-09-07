@@ -29,8 +29,17 @@ function onReady() {
     //empty the input
     newToDoText.value = '';
   });
-}
+};
 
+function deleteCheckBox() {
+    let ul = document.getElementById('toDoList');
+    let li = ul.children;
+    for (let i=0; i < li.length; i++) {
+        while(li[i] && li[i].children[0].checked) {
+            ul.removeChild(li[i]);
+        }
+    }
+}
 
 
 window.onload = function() {
